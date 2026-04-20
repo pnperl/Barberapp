@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barber Kiosk & History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="card">
+            <h1>👤 Customer Check-in</h1>
+            <input type="text" id="custName" placeholder="Full Name">
+            <input type="text" id="custPhone" placeholder="WhatsApp Number (e.g. 1234567890)">
+            
+            <h3>Select Services:</h3>
+            <div id="serviceGrid" class="grid"></div>
+            
+            <div class="status-bar">
+                Selected: <span id="selectedDisplay">None</span> (<span id="tempWait">0</span> mins)
+            </div>
+            <button class="btn-join" onclick="submitToQueue()">JOIN THE LINE</button>
+        </section>
 
+        <section class="card">
+            <h2>⚙️ Service Config</h2>
+            <div class="input-group">
+                <input type="text" id="newSvcName" placeholder="Service Name">
+                <input type="number" id="newSvcTime" placeholder="Mins">
+                <button onclick="saveService()">Add</button>
+            </div>
+            <ul id="adminServiceList"></ul>
+        </section>
+
+        <section class="card">
+            <h2>📋 Current Queue (Total Wait: <span id="globalWait">0</span>m)</h2>
+            <div id="queueDisplay"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
